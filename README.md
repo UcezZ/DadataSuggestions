@@ -1,5 +1,9 @@
 [![](https://jitpack.io/v/illabo/DadataSuggestions.svg)](https://jitpack.io/#illabo/DadataSuggestions)
 
+## New in this fork
+- Minimal required SDK is 24
+- Target SDK is 34
+
 ## DadataSuggestions
 
 It is a dumbed-down Android port of my [iOS library of same purpose](https://github.com/illabo/IIDadata). Made it to have the ability of convenient reuse of this code.
