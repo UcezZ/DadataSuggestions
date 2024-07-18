@@ -1,7 +1,8 @@
 [![](https://jitpack.io/v/illabo/DadataSuggestions.svg)](https://jitpack.io/#illabo/DadataSuggestions)
 
 ## New in this fork
-- Minimal required SDK is 24
+
+- Minimal required SDK is 23
 - Target SDK is 34
 
 ## DadataSuggestions
@@ -12,15 +13,16 @@ It is primarily intended to be used as a geocoder (forward and reverse) for addr
 ### Usage
 
 There are three methods available `suggest`, `geocode`, `reverseGeocode`.
+
 ```Kotlin
-val dadataClient = DadataSuggestions("YOUR DADATA API TOKEN HERE") 
+val dadataClient = DadataSuggestions("YOUR DADATA API TOKEN HERE")
 
 dadataClient.suggest(
     AddressSuggestionRequest("Новая москва", 3, "ru")
 ) { Log.d(
     "DADATA ADDR RES",
     it.suggestions.first().unrestricted_value
-) } 
+) }
 
 dadataClient.reverseGeocode(
     ReverseGeocodeRequest(43.115141, 131.885341, 1)
@@ -29,4 +31,5 @@ dadataClient.reverseGeocode(
     it.suggestions.first().unrestricted_value
 ) }
 ```
+
 You may also want to add `-keepclassmembers class app.illabo.dadatasuggestions.** {*;}` to your project's proguard-rules.pro. Sometimes a crash may be occurred if minification is enabled for this library. It happens when the `completion` passed on calls to `DadataSuggestions` class' methods [raises a NullPointerException in coroutine](https://github.com/Kotlin/kotlinx.coroutines/issues/910).
